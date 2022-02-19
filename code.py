@@ -91,14 +91,14 @@ def menu_2_func(): # create/add data
                     while(True):
                         validation = input('\nApakah Anda Yakin? (Y/N): ').upper()
                         if validation == 'Y':
-                            addition_data2 = {
+                            addition_data = {
                                 'Nama Barang': nama_barang,
                                 'Harga': harga_barang,
                                 'Jumlah': jumlah_barang,
                                 'Terjual': terjual_barang,
                                 'Lokasi Rak': lokasi_barang, }
 
-                            stuffs_data.append(addition_data2)
+                            stuffs_data.append(addition_data)
                             print('\nData Tersimpan!')
                             break
                         elif validation == 'N':
