@@ -59,9 +59,8 @@ def menu_1_func():  # show data
                 print(print_total.format(nama_barang_for['Nama Barang'], nama_barang_for['Harga'], nama_barang_for['Jumlah'], nama_barang_for['Terjual'], nama_barang_for['Lokasi Rak']))
 
         elif menu_1_choice == '2':
-            menu_1_2_choice = input('\nMasukkan Nama Barang: ')
+            menu_1_2_choice = input('\nMasukkan Nama Barang: ').capitalize()
             for nama_barang_for in stuffs_data:
-                menu_1_2_choice = menu_1_2_choice.capitalize()
                 if menu_1_2_choice == nama_barang_for['Nama Barang']:
                     print(print_total.format(nama_barang_for['Nama Barang'], nama_barang_for['Harga'], nama_barang_for['Jumlah'], nama_barang_for['Terjual'], nama_barang_for['Lokasi Rak']))
                     break    
@@ -76,8 +75,7 @@ def menu_2_func(): # create/add data
     while(True):
         menu_2_choice = input(menu_2)
         if menu_2_choice == '1':
-            menu_2_prim_key = input('Nama Barang: ')
-            menu_2_prim_key = menu_2_prim_key.capitalize()
+            menu_2_prim_key = input('Nama Barang: ').capitalize()
             for nama_barang_for in stuffs_data:
                 if menu_2_prim_key == nama_barang_for['Nama Barang']:
                     print('\nBarang sudah ada!')
@@ -88,22 +86,19 @@ def menu_2_func(): # create/add data
                     harga_barang = int(input('Harga: '))
                     jumlah_barang = int(input('Jumlah: '))
                     terjual_barang = int(input('Terjual: '))
-                    lokasi_barang = input('Lokasi Rak: ')
-                    lokasi_barang = lokasi_barang.upper()
+                    lokasi_barang = input('Lokasi Rak: ').upper()
 
                     while(True):
-                        validation = input('\nApakah Anda Yakin? (Y/N): ')
-                        validation = validation.upper()
-
+                        validation = input('\nApakah Anda Yakin? (Y/N): ').upper()
                         if validation == 'Y':
-                            addition_data = {
+                            addition_data2 = {
                                 'Nama Barang': nama_barang,
                                 'Harga': harga_barang,
                                 'Jumlah': jumlah_barang,
                                 'Terjual': terjual_barang,
                                 'Lokasi Rak': lokasi_barang, }
 
-                            stuffs_data.append(addition_data)
+                            stuffs_data.append(addition_data2)
                             print('\nData Tersimpan!')
                             break
                         elif validation == 'N':
@@ -122,17 +117,14 @@ def menu_3_func():  # update data
         menu_3_choice = input(menu_3)
         if menu_3_choice == '1':
 
-            menu_3_prim_key = input('\nMasukkan Nama Barang: ')
+            menu_3_prim_key = input('\nMasukkan Nama Barang: ').capitalize()
             print()
             for nama_barang_for in stuffs_data:
-                menu_3_prim_key = menu_3_prim_key.capitalize()
                 if menu_3_prim_key == nama_barang_for['Nama Barang']:
                     print(print_total.format(nama_barang_for['Nama Barang'], nama_barang_for['Harga'], nama_barang_for['Jumlah'], nama_barang_for['Terjual'], nama_barang_for['Lokasi Rak']))
 
                     while(True):
-                        validation = input('Apakah Anda Yakin? (Y/N): ')
-                        validation = validation.upper()
-
+                        validation = input('Apakah Anda Yakin? (Y/N): ').upper()
                         if validation == 'Y':
                             nama_barang = menu_3_prim_key
                             try:
@@ -140,8 +132,7 @@ def menu_3_func():  # update data
                                 harga_barang = int(input('Harga: '))
                                 jumlah_barang = int(input('Jumlah: '))
                                 terjual_barang = int(input('Terjual: '))
-                                lokasi_barang = input('Lokasi Rak: ')
-                                lokasi_barang = lokasi_barang.upper()
+                                lokasi_barang = input('Lokasi Rak: ').upper()
 
                                 # update session
                                 nama_barang_for['Harga'] = harga_barang
@@ -169,16 +160,13 @@ def menu_4_func():
     while(True):
         menu_4_choice = input(menu_4)
         if menu_4_choice == '1':
-            menu_4_2_choice = input('\nMasukkan Nama Barang: ')
+            menu_4_2_choice = input('\nMasukkan Nama Barang: ').capitalize()
             for nama_barang_for in stuffs_data:
-                menu_4_2_choice = menu_4_2_choice.capitalize()
                 if menu_4_2_choice == nama_barang_for['Nama Barang']:
                     print(print_total.format(nama_barang_for['Nama Barang'], nama_barang_for['Harga'], nama_barang_for['Jumlah'], nama_barang_for['Terjual'], nama_barang_for['Lokasi Rak']))
                     
                     while(True):
-                        validation = input('Apakah Anda Yakin Ingin Menghapus Data Tersebut? (Y/N): ')
-                        validation = validation.upper()
-
+                        validation = input('Apakah Anda Yakin Ingin Menghapus Data Tersebut? (Y/N): ').upper()
                         if validation == 'Y':
                             stuffs_data.remove(nama_barang_for)
                             print('Data Telah Dihapus!')
